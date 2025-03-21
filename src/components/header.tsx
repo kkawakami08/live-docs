@@ -1,3 +1,4 @@
+import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -25,6 +26,12 @@ const Header = ({ children }: HeaderProps) => {
           className="md:hidden mr-2"
         />
       </Link>
+      <SignedOut>
+        <SignInButton className="text-white" />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
       {children}
     </div>
   );
