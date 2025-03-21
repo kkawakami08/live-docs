@@ -1,4 +1,3 @@
-import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,7 +8,7 @@ interface HeaderProps {
 
 const Header = ({ children }: HeaderProps) => {
   return (
-    <div className="flex">
+    <div className="flex gap-5">
       <Link href={"/"} className="md:flex-1">
         <Image
           src="/assets/icons/logo.svg"
@@ -26,12 +25,7 @@ const Header = ({ children }: HeaderProps) => {
           className="md:hidden mr-2"
         />
       </Link>
-      <SignedOut>
-        <SignInButton className="text-white" />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+
       {children}
     </div>
   );
